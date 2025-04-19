@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid and Flexbox </title>
+</head>
+<style >
+	* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr auto; 
+    height: 100vh; 
+    font-family:"Inter" sans-serif;
+          font-weight:800;
+          font-size:12px;
+          text-transform:uppercase;
+           text-align:center;      
+           grid-gap:0.2rem;
+}
+
+#sidebar {
+    background-color: lightblue;
+    color: white;
+    padding: 10px;
+}
+
+.content {
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    grid-grap:0.2rem;
+}
+
+#header {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+}
+
+#main {
+    background-color: #18ffff;
+    padding: 10px;
+}
+
+#footer {
+    background-color: lightblue;
+    color: white;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto 1fr auto;
+    }
+
+    #sidebar {
+        grid-column: 1; 
+        order: 1; 
+    }
+
+    .content {
+        grid-column: 1; 
+        order: 2; 
+        grid-gap:0.2rem;
+    }
+}
+</style >
+<body>
+	<div class="dashboard">
+		<div id="sidebar">Sidebar</div>
+		<main class="content">
+		<header id="header">Header</header>
+		<main id="main">Main Content</main>
+		<footer id="footer">Footer</footer>
+</main>		    
+</div>
+
+
+</body>
+</html>
